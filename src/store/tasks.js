@@ -3,15 +3,24 @@ export const tasks = {
 
     state(){
         return {
-            tasks: []
+            all: []
         }
     },
 
+    getters: {
+        taskCount: state => state.all.length,
+    },
+
     mutations: {
-        set
+        addTask(state, task){
+            state.all = [...state.all, ...task]
+
+        }
     },
 
     actions: {
-        addTask(ctx)
+        addTask(ctx, task){
+            ctx.commit('addTask', task)
+        }
     }
 }
