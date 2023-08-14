@@ -8,10 +8,10 @@ export const tasks = {
     },
 
     mutations: {
-
+        set
     },
 
     actions: {
-        
+        addTask(ctx)
     }
 }

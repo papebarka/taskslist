@@ -1,6 +1,15 @@
-# taskslist
+# Taskslist
 
-This template should help get you started developing with Vue 3 in Vite.
+A task management application built with Vue.JS
+
+## Technology Stack
+
+Programming Language: JavaScript
+
+Framework: Vue.JS, Vue Router, Vuex 4
+
+Style: Semantic UI
+
 
 ## Recommended IDE Setup
 
@@ -27,3 +36,19 @@ npm run dev
 ```sh
 npm run build
 ```
+
+## Features
+
+### To-Do
+
+[] Add task
+
+[] Edit task
+
+[] Delete task
+
+[] Complete task
+
+[] See completed tasks
+
+[] Search tasks
