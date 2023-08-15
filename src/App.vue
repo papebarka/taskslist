@@ -20,11 +20,8 @@ console.log(tasks)
 const taskCount = computed(() => store.getters['tasks/taskCount'])
 
  const submit = () => {
-  console.log(form)
-  const data = []
-  data.push(form)
-  console.log(data)
-  store.dispatch('tasks/addTask', [].push(data))
+  const data = {...form}
+  store.dispatch('tasks/addTask', data)
  }
 </script>
 

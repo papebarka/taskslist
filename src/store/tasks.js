@@ -13,8 +13,10 @@ export const tasks = {
 
     mutations: {
         addTask(state, task){
-            state.all = [...state.all, ...task]
-
+            state.all = [...state.all, task]
+            //state.all.push(task)
+            console.log("Actual State")
+            console.log(state.all)
         }
     },
 
