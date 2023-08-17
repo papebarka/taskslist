@@ -3,9 +3,8 @@ import { computed, reactive } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 import { useStore } from 'vuex'
 
-import HelloWorld from './components/HelloWorld.vue'
-
 const form = reactive({
+  id: 0,
   task: "",
   description: "",
   deadline: null,
@@ -18,10 +17,20 @@ const tasks = computed( () => store.state.tasks.all)
 
 console.log(tasks)
 const taskCount = computed(() => store.getters['tasks/taskCount'])
+const lastElementId = computed(() => store.getters['tasks/lastElementId'])
 
- const submit = () => {
+ const submit = (event) => {
+  //console.log(`Task count is: ${taskCount.value}`)
+
+  //console.log(`Last element ID is: ${Object.entries(lastElementId)}`)
+  form.id = lastElementId.value + 1
+  //console.log(toString(lastElementId))
+  //console.log('New ID:')
+  //console.log(JSON.stringify(form))
   const data = {...form}
   store.dispatch('tasks/addTask', data)
+  //console.log(event)
+  event.target.reset()
  }
 </script>
 
@@ -73,6 +82,7 @@ const taskCount = computed(() => store.getters['tasks/taskCount'])
           v-for="(task, index) in tasks"
           :key="index"
         >
+          <h2>{{ task.id }}</h2>
           {{ task.task }}
         </div>
       </div>
