@@ -11,7 +11,7 @@ import { RouterLink, RouterView } from 'vue-router'
 
       <nav>
         <RouterLink to="/">Tasks</RouterLink>
-        <RouterLink to="/about">New Tasks</RouterLink>
+        <RouterLink to="/tasks/new">New Tasks</RouterLink>
       </nav>
     </div>
   </header>
