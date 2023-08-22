@@ -1,7 +1,7 @@
 <script setup>
+import TaskForm from '../components/TaskForm.vue'
 </script>
 
 <template>
-  <main>
-  </main>
+  <TaskForm />
 </template>
