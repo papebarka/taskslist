@@ -1,6 +1,9 @@
 <script setup>
 import { computed, reactive } from 'vue'
 import { useStore } from 'vuex'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 const form = reactive({
   id: 0,
@@ -26,6 +29,8 @@ const lastElementId = computed(() => store.getters['tasks/lastElementId'])
   store.dispatch('tasks/addTask', data)
   //console.log(event)
   event.target.reset()
+
+  router.push({name: 'home'})
  }
 </script>
 
