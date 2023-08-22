@@ -41,7 +41,7 @@ npm run build
 
 ### To-Do
 
-[] Add task
+[x] Add task
 
 [] Edit task
 

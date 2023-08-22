@@ -13,10 +13,6 @@ const form = reactive({
 
 const store = useStore()
 
-const tasks = computed( () => store.state.tasks.all)
-
-console.log(tasks)
-const taskCount = computed(() => store.getters['tasks/taskCount'])
 const lastElementId = computed(() => store.getters['tasks/lastElementId'])
 
  const submit = (event) => {
@@ -77,18 +73,7 @@ const lastElementId = computed(() => store.getters['tasks/lastElementId'])
       </form>
     </section>
     <section>
-      <div v-if="taskCount > 0">
-        <div
-          v-for="(task, index) in tasks"
-          :key="index"
-        >
-          <h2>{{ task.id }}</h2>
-          {{ task.task }}
-        </div>
-      </div>
-      <div v-else>
-        You currently have no task
-      </div>
+      
     </section>
   </main>
   <RouterView />
